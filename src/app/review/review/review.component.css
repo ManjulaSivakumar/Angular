@@ -1,0 +1,22 @@
+h1{
+    
+    background-color: red;
+}
+
+.title{
+    background-color:aquamarine;
+}
+.thumbnail{
+    background-color:blue;
+    float:left;
+    width: 100px;
+    height: 100px;
+    margin:2px;
+}
+.description{
+    background-color:green;
+    height:100px;
+    width:92%;
+    float:right;
+    position:relative;
+}

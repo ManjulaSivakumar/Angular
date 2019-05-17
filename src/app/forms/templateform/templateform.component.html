@@ -1,0 +1,24 @@
+<div>
+  Template form <br>
+<form #hobbyForm="ngForm" (ngSubmit)="submitDetail(hobbyForm)">
+  <label>Name: </label>
+  <input type="text" name="fn" [(ngModel)] = "fullname" required pattern="[a-zA-Z]{3,20}" >
+  {{ fullname }}
+  <span [ngStyle]="{color:hobbyForm.controls.fn.invalid?'red':'green'}">Minimum Length is 3. Max is 20, Only alphabets</span>
+  <br>
+  <label>Age: </label>
+<input type="number" name="ag" [(ngModel)]="age" required min="18" max="58"> {{age}}
+<span [ngStyle]="{color:hobbyForm.controls.ag.invalid?'red':'green'}">Minimum Age is 18. Maximum Age is 58, </span>
+<br>
+<label>Hobby: </label>
+  <select name="hby" [(ngModel)]="hobby" > 
+    <option value="hacking">Hacking</option>
+    <option value="driving">Driving</option>
+    <option value="trekking">Trekking</option>
+  </select>{{hobby}}
+  <br>
+  <button type="submit" >Submit</button>
+</form>
+
+
+</div>

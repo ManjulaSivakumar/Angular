@@ -1,0 +1,15 @@
+<p>
+  consumeparent works!
+</p>
+
+Value of variable name: {{ name }}
+<hr>
+I am child: 
+<app-child1 (sendName) ="name" (sendTOParent) = "recievedname($event)"></app-child1>
+
+
+<hr>
+<a routerLink="consumeservice1">Child1</a>&nbsp;
+<a routerLink="consumeservice2">Child2</a>
+
+<router-outlet></router-outlet>
