@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,7 @@ import { ConsumeparentComponent } from './AngularServices/consumeparent/consumep
 import { Child1Component } from './AngularServices/child1/child.component';
 import { ReactiveformComponent } from './forms/reactiveform/reactiveform.component';
 import { TemplateformComponent } from './forms/templateform/templateform.component';
+import { AnimationComponent } from './animate/animation/animation.component';
 
 
 
@@ -45,12 +48,15 @@ import { TemplateformComponent } from './forms/templateform/templateform.compone
     ConsumeparentComponent,
     Child1Component,
     ReactiveformComponent,
-    TemplateformComponent
+    TemplateformComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, 
+    ReactiveFormsModule,  
+    BrowserAnimationsModule, 
     RouterModule.forRoot([
       {
         path:'',
@@ -114,6 +120,11 @@ import { TemplateformComponent } from './forms/templateform/templateform.compone
         path:'reactive',
         component:ReactiveformComponent
       },
+      {
+        path:'animation',
+        component:AnimationComponent
+      },
+      
       {
         path:'**',
         component:BadrouteComponent
