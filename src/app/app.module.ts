@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http"; 
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,10 +23,12 @@ import { BadrouteComponent } from './notfound/badroute/badroute.component';
 import { Consume1Component } from './AngularServices/consume1/consume1.component';
 import { Consume2Component } from './AngularServices/consume2/consume2.component';
 import { ConsumeparentComponent } from './AngularServices/consumeparent/consumeparent.component';
-import { Child1Component } from './AngularServices/child1/child.component';
+import { Child1Component } from './AngularServices/child1/child1.component';
 import { ReactiveformComponent } from './forms/reactiveform/reactiveform.component';
 import { TemplateformComponent } from './forms/templateform/templateform.component';
 import { AnimationComponent } from './animate/animation/animation.component';
+import { RemoteComponent } from './restapi/remote/remote.component';
+import { EmployeeDetailComponent } from './restapi/employee-detail/employee-detail.component';
 
 
 
@@ -49,7 +52,9 @@ import { AnimationComponent } from './animate/animation/animation.component';
     Child1Component,
     ReactiveformComponent,
     TemplateformComponent,
-    AnimationComponent
+    AnimationComponent,
+    RemoteComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +62,7 @@ import { AnimationComponent } from './animate/animation/animation.component';
     FormsModule, 
     ReactiveFormsModule,  
     BrowserAnimationsModule, 
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path:'',
@@ -123,6 +129,14 @@ import { AnimationComponent } from './animate/animation/animation.component';
       {
         path:'animation',
         component:AnimationComponent
+      },
+      {
+        path:'remote',
+        component:RemoteComponent
+      },
+      {
+        path:'remote/:id',
+        component:EmployeeDetailComponent
       },
       
       {

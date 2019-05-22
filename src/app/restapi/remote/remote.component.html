@@ -1,0 +1,68 @@
+<div>
+    Remote Users:
+    </div>
+    
+    <div>
+    <table class="tablestripe" border="5px">
+    <thead>
+    <tr>
+    <th>USER ID</th>
+    <th>USER NAME</th>
+    <th>CITY</th>
+    <th>LATITUDE</th>
+    <th>LONGITUDE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let u of users">
+    <td>{{u.id}}</td>
+    <td>{{u.username}}</td>
+    <td>{{u.address.city}}</td>
+    <td>{{u.address.geo.lat}}</td>
+    <td>{{u.address.geo.lng}}</td>
+    </tr>
+    </tbody>
+    </table>
+    <br>
+    <hr>
+    <table class="tablestripe" border="2px">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>SALARY</th>
+    <th>AGE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let e of employees">
+    <td>{{e.id}}</td>
+    <td>{{e.employee_name}}</td>
+    <td>{{e.employee_salary}}</td>
+    <td>{{e.employee_age}}</td>
+    <td><button (click)="getEmployeeDetails(e.id)">CHECK DETAILS</button>
+      <button (click)="deleteEmployee(e.id)">Delete</button>
+    </td>    
+    </tr>
+    </tbody>
+    </table>
+
+    <br>
+    <br>
+    <form [formGroup] = "newemployeeform" (ngSubmit)="addnewEmployee(newemployeeform)">
+        <label>Name:</label>
+        <input type="text" formControlName="name">
+        <br>
+        <label>Age: </label>
+        <input type="number" formControlName="age">
+        <br>
+        <label>Salary:</label>
+        <input type="number" formControlName="salary">
+        <br>
+        <br>
+      <button type="submit">Add New Employee</button>
+    </form>
+
+    <br>
+    <button (click)="addEmployee()">Add Employee</button>
+    </div> 
