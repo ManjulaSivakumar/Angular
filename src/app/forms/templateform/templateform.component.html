@@ -2,7 +2,7 @@
   Template form <br>
 <form #hobbyForm="ngForm" (ngSubmit)="submitDetail(hobbyForm)">
   <label>Name: </label>
-  <input type="text" name="fn" [(ngModel)] = "fullname" required pattern="[a-zA-Z]{3,20}" >
+  <input #myform type="text" name="fn" [(ngModel)] = "fullname" required pattern="[a-zA-Z]{3,20}" >
   {{ fullname }}
   <span [ngStyle]="{color:hobbyForm.controls.fn.invalid?'red':'green'}">Minimum Length is 3. Max is 20, Only alphabets</span>
   <br>
